@@ -20,9 +20,13 @@ import { SampleModule } from 'app/main/sample/sample.module';
 
 const appRoutes: Routes = [
     {
-        path      : '**',
-        redirectTo: 'sample'
-    }
+        path: 'auth',
+        loadChildren: () => import('./main/auth/auth.module').then(m => m.AuthModule)
+    },
+    {
+        path: '',
+        loadChildren: () => import('./main/pages/pages.module').then(m => m.PagesModule)
+    },
 ];
 
 @NgModule({
