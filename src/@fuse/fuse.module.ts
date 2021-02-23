@@ -13,7 +13,7 @@ export class FuseModule
         }
     }
 
-    static forRoot(config): ModuleWithProviders
+    static forRoot(config): ModuleWithProviders<any>
     {
         return {
             ngModule : FuseModule,
